@@ -1,3 +1,4 @@
+process.env.PWD = process.cwd();
 // Dependencies
 // =============================================================
 var express = require('express');
@@ -16,11 +17,11 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
 //app.use(express.static('app/public'));
-app.use(express.static(__dirname + '/public'));
+app.use('/public', express.static(process.env.PWD + '/public'));
+// app.use(express.static(__dirname + '/public'));
 // app.use('/static', express.static(__dirname + '/public'));
 
-console.log("__dirname:", __dirname);
-console.log("__dirname public:", __dirname + '/public');
+console.log(process.env.PWD);
 
 // Points the server to a series of 'route' files
 // that give the server a map of how to respond when users
