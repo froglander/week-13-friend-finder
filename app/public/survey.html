@@ -2,13 +2,20 @@
 <html>
 <head>
 	<title>Friend Finder - Survey</title>
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<!-- Latest compiled and minified CSS & JS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+		  integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+			integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="assets/css/style.css" type="text/css"> 
+
 </head>
 <body>
 	<div class="container">
 		<div>
-			<h1><img src="dog.png" align="middle" />
+			<h1><img src="assets/images/dog.png" class="header-img" />
 			Survey Questions</h1>
 		</div>
 		<hr />
@@ -22,7 +29,7 @@
 			<!-- 10 Questions -->
 			<h3><strong>Question 1</strong></h3>
 			<h4>You like to take long walks.</h4>
-		 	<select data-placeholder="" class="chosen-select" id="q1">
+		 	<select id="q1">
 		 		<option value=""></option>
 	            <option value="1">1 (Strongly Disagree)</option>
 	            <option value="2">2</option>
@@ -32,7 +39,7 @@
 	      	</select>
 	      	<h3><strong>Question 2</strong></h3>
 	      	<h4>You like to curl up on the couch.</h4>
-		 	<select data-placeholder="" class="chosen-select" id="q2">
+		 	<select id="q2">
 		 		<option value=""></option>
 	            <option value="1">1 (Strongly Disagree)</option>
 	            <option value="2">2</option>
@@ -42,7 +49,7 @@
 	      	</select>
 	      	<h3><strong>Question 3</strong></h3>
 	      	<h4>You don't mind brushing long hair.</h4>
-		 	<select data-placeholder="" class="chosen-select" id="q3">
+		 	<select id="q3">
 		 		<option value=""></option>
 	            <option value="1">1 (Strongly Disagree)</option>
 	            <option value="2">2</option>
@@ -52,7 +59,7 @@
 	      	</select>
 	      	<h3><strong>Question 4</strong></h3>
 			<h4>You like to go to the park.</h4>
-		 	<select data-placeholder="" class="chosen-select" id="q4">
+		 	<select id="q4">
 		 		<option value=""></option>
 	            <option value="1">1 (Strongly Disagree)</option>
 	            <option value="2">2</option>
@@ -62,7 +69,7 @@
 	      	</select>
 	      	<h3><strong>Question 5</strong></h3>
 			<h4>You like knowing a long, detailed history.</h4>
-		 	<select data-placeholder="" class="chosen-select" id="q5">
+		 	<select id="q5">
 		 		<option value=""></option>
 	            <option value="1">1 (Strongly Disagree)</option>
 	            <option value="2">2</option>
@@ -72,7 +79,7 @@
 	      	</select>
 	      	<h3><strong>Question 6</strong></h3>
 			<h4>You have time to put into socializing.</h4>
-		 	<select data-placeholder="" class="chosen-select" id="q6">
+		 	<select id="q6">
 		 		<option value=""></option>
 	            <option value="1">1 (Strongly Disagree)</option>
 	            <option value="2">2</option>
@@ -82,7 +89,7 @@
 	      	</select>
 	      	<h3><strong>Question 7</strong></h3>
 			<h4>You like to go jogging.</h4>
-		 	<select data-placeholder="" class="chosen-select" id="q7">
+		 	<select id="q7">
 		 		<option value=""></option>
 	            <option value="1">1 (Strongly Disagree)</option>
 	            <option value="2">2</option>
@@ -92,7 +99,7 @@
 	      	</select>
 	      	<h3><strong>Question 8</strong></h3>
 			<h4>You like doing housework.</h4>
-		 	<select data-placeholder="" class="chosen-select" id="q8">
+		 	<select id="q8">
 		 		<option value=""></option>
 	            <option value="1">1 (Strongly Disagree)</option>
 	            <option value="2">2</option>
@@ -102,7 +109,7 @@
 	      	</select>
 	      	<h3><strong>Question 9</strong></h3>
 			<h4>You like someone to protect you.</h4>
-		 	<select data-placeholder="" class="chosen-select" id="q9">
+		 	<select id="q9">
 		 		<option value=""></option>
 	            <option value="1">1 (Strongly Disagree)</option>
 	            <option value="2">2</option>
@@ -112,7 +119,7 @@
 	      	</select>
 	      	<h3><strong>Question 10</strong></h3>
 			<h4>You like to travel.</h4>
-		 	<select data-placeholder="" class="chosen-select" id="q10">
+		 	<select id="q10">
 		 		<option value=""></option>
 	            <option value="1">1 (Strongly Disagree)</option>
 	            <option value="2">2</option>
@@ -137,5 +144,29 @@
     </footer>
 
 	</div>
+
+	<script type="text/javascript">
+  	
+    // Capture the form inputs
+    $("#submit").on("click", function(){
+    	// Create an object for the survey data
+	    	var surveyData = {
+	    		name: $("#name").val(),
+	    		photo: $("#photo").val(),
+	    		scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(), ]
+	    	};
+
+	    	// Get the URL of the website
+	    	// var currentURL = window.location.origin;
+	    	// Use AJAX to post the data to the friends API.
+	    	$.post("/api/friends", surveyData, function(data){
+	    		// Grab the result from the AJAX post so that the best match's name and photo are displayed.
+	    		console.log(data);
+	    		
+	    	});
+    	return false;
+    });
+  </script>
+
 </body>
 </html>
