@@ -15,8 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
-app.use(express.static(__dirname + '/app/public'));
-console.log("__dirname:", __dirname);
+app.use(express.static('app/public'));
 
 // Points the server to a series of 'route' files
 // that give the server a map of how to respond when users
