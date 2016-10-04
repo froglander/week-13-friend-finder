@@ -16,8 +16,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
-//app.use(express.static('app/public'));
-app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.static('app/public'));
+//app.use(express.static(path.join(__dirname, '/public')));
+//app.use(express.static(path.join(process.env.PWD, '/public')));
 //app.use('/public', express.static(process.env.PWD + '/public'));
 // app.use('/public', express.static(path.join(process.env.PWD, 'public')));
 
@@ -28,6 +29,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 // app.use('/static', express.static(__dirname + '/public'));
 
 console.log("dirname:", __dirname);
+console.log("process.env.PWD:", process.env.PWD);
 
 // Points the server to a series of 'route' files
 // that give the server a map of how to respond when users
