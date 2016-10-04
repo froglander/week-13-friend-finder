@@ -16,6 +16,7 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
 app.use(express.static('app/public'));
+app.use(express.static(__dirname + '/public'));
 
 console.log("__dirname:", __dirname);
 
