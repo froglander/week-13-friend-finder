@@ -17,7 +17,7 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
 //app.use(express.static('app/public'));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/public')));
 //app.use('/public', express.static(process.env.PWD + '/public'));
 // app.use('/public', express.static(path.join(process.env.PWD, 'public')));
 
