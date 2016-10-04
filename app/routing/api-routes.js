@@ -19,7 +19,7 @@ module.exports = function(app) {
 		console.log(friendData);
 
 		// write data to file
-		 fs.writeFile('../data/friends.js', friendData);
+		//fs.writeFile('../data/friends.js', friendData);
 
 	});
 };
